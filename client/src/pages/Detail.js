@@ -1,8 +1,14 @@
 import React from "react";
+import Jumbotron from "../components/Jumbotron";
 
 function Detail() {
     return (
-        <p>Detail</p>
+        <div>
+            <Jumbotron>
+                <h1>Book Details</h1>
+            </Jumbotron>
+            <p>books</p>
+        </div>
     );
 }
 

@@ -1,0 +1,13 @@
+.jumbotron {
+    background-image: url("https://cdn-images-1.medium.com/max/1600/0*Ugp4QQOB6XvJwi-L");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(78, 78, 78);
+    background-blend-mode: overlay;
+
+    height: 300;
+    clear: "both";
+    padding-top: 120;
+    color: white;
+}

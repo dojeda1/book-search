@@ -1,8 +1,14 @@
 import React from "react";
+import Jumbotron from "../components/Jumbotron";
 
 function Search() {
     return (
-        <p>Search</p>
+        <div>
+            <Jumbotron>
+                <h1>Search Google Books</h1>
+            </Jumbotron>
+            <p>books</p>
+        </div>
     );
 }
 
