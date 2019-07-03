@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import { Input, FormBtn } from "../components/Form";
+// import API from "../utils/API";
 
 class Search extends Component {
 
     state = {
-        books: [],
-        title: "",
-        author: "",
+        bookData: [],
+        searchTitle: "",
+        lastQuery: ""
+
     };
 
     handleInputChange = event => {
@@ -17,9 +19,15 @@ class Search extends Component {
         });
     };
 
-    handleFormSubmit = event => {
+    handleSearchSubmit = event => {
         event.preventDefault();
-        console.log("search chosen");
+        const BASE_URL = 'https://www.googleapis.com/books/v1/volumes?q=';
+        fetch(`${BASE_URL}${this.state.query}`, { method: 'GET' })
+            .then(response => response.json())
+            .then(json => {
+                console.log(json.items);
+                this.setState({ bookData: json.items, lastQuery: this.state.query });
+            });
     };
 
     render() {
@@ -31,14 +39,14 @@ class Search extends Component {
                 <div className="container">
                     <form>
                         <Input
-                            value={this.state.title}
+                            value={this.state.searchTitle}
                             onChange={this.handleInputChange}
-                            name="title"
-                            placeholder="Title (required)"
+                            name="searchTitle"
+                            placeholder="Search Books by Title"
                         />
                         <FormBtn
-                            disabled={!this.state.title}
-                            onClick={this.handleFormSubmit}
+                            disabled={!this.state.searchTitle}
+                            onClick={this.handleSearchSubmit}
                         >
                             Search
                     </FormBtn>
