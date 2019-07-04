@@ -41,7 +41,7 @@ class SavedBookDiv extends Component {
                 </div>
                 <div className="col-12 pt-3">
                     <a href={this.props.link} className="btn float-left text-primary">View More</a>
-                    <button className="btn btn-danger float-right" onClick={this.handleDelete}>Delete</button>
+                    <button className="btn btn-outline-danger float-right" onClick={this.handleDelete}>Delete</button>
                 </div>
             </div>
         )

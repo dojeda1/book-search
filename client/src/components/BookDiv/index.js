@@ -10,14 +10,15 @@ class BookDiv extends Component {
             description: this.props.description,
             image: this.props.image,
             link: this.props.link
-        }
+        },
+        saved: false
     }
 
     handleSave = event => {
         event.preventDefault();
 
         API.saveBook(this.state.bookData)
-            .then(res => console.log(res))
+            .then(res => this.setState({ saved: true }))
             .catch(err => console.log(err));
 
     };
@@ -27,7 +28,7 @@ class BookDiv extends Component {
 
         return (
 
-            <div className="bg-light row p-3 mb-5">
+            <div className={(this.state.saved) ? "text-secondary row p-3 mb-5" : "bg-light row p-3 mb-5"}>
                 <div className="col-12">
                     <h4 className="text-info">{this.props.title}</h4>
                     <p>
@@ -43,7 +44,7 @@ class BookDiv extends Component {
                 </div>
                 <div className="col-12 pt-3">
                     <a href={this.props.link} className="btn float-left text-primary">View More</a>
-                    <button className="btn btn-success float-right" onClick={this.handleSave}>Save</button>
+                    <button className="btn btn-outline-success float-right" onClick={this.handleSave} disabled={this.state.saved} >Save</button>
                 </div>
             </div>
         )
