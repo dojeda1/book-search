@@ -13,45 +13,13 @@ class BookDiv extends Component {
         }
     }
 
-    saveBook(data) {
-        console.log(data)
-        API.saveBook(data).then(
-            (response) => {
-                console.log(response);
-            }
-        ).catch(
-            (err) => {
-                console.log(err);
-            }
-        );
-    }
-
-    handleFormSubmit = event => {
+    handleSave = event => {
         event.preventDefault();
 
-        API.saveBook({
-            title: this.state.title,
-            authors: this.props.authors,
-            description: this.props.description,
-            image: this.props.image,
-            link: this.props.link
-        })
-            .then(res => this.loadBooks())
+        API.saveBook(this.state.bookData)
+            .then(res => console.log(res))
             .catch(err => console.log(err));
 
-    };
-
-    handleSave = props => {
-
-        API.saveBook({
-            title: props.title,
-            authors: props.authors,
-            description: props.description,
-            image: props.image,
-            link: props.link
-        })
-            .then(res => this.loadBooks())
-            .catch(err => console.log(err));
     };
 
     render() {
@@ -75,7 +43,7 @@ class BookDiv extends Component {
                 </div>
                 <div className="col-12 pt-3">
                     <a href={this.props.link} className="btn float-left text-primary">View More</a>
-                    <button className="btn btn-success float-right" onClick={this.handleFormSubmit}>Save</button>
+                    <button className="btn btn-success float-right" onClick={this.handleSave}>Save</button>
                 </div>
             </div>
         )
