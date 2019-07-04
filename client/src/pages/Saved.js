@@ -21,12 +21,11 @@ class Saved extends Component {
             .catch(err => console.log(err));
     };
 
-    // deleteBook = id => {
-    //     API.deleteBook(id)
-    //         .then(res => this.loadBooks())
-    //         .catch(err => console.log(err));
-    // };
-
+    deleteBook = id => {
+        API.deleteBook(id)
+            .then(res => this.loadBooks())
+            .catch(err => console.log(err));
+    };
 
     render() {
         return (
@@ -46,6 +45,7 @@ class Saved extends Component {
                                     description={book.description}
                                     image={book.image}
                                     link={book.link}
+                                    deleteBook={this.deleteBook}
                                 />
                             ))}
                         </div>

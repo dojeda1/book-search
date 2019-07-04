@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import API from "../../utils/API";
-
 class SavedBookDiv extends Component {
 
     state = {
@@ -13,12 +11,6 @@ class SavedBookDiv extends Component {
             link: this.props.link
         }
     }
-
-    handleDelete = () => {
-        API.deleteBook(this.state.bookData.id)
-            .then(res => console.log("deleted"))
-            .catch(err => console.log(err));
-    };
 
     render() {
         const altImage = 'http://3.bp.blogspot.com/-tCI0EpMjT8c/ULY7ZYQpx_I/AAAAAAAAAdU/bwAeN4XNTuw/s1600/book.png';
@@ -40,8 +32,8 @@ class SavedBookDiv extends Component {
                     <p>{(this.props.description) ? this.props.description : "N/A"}</p>
                 </div>
                 <div className="col-12 pt-3">
-                    <a href={this.props.link} className="btn float-left text-primary">View More</a>
-                    <button className="btn btn-outline-danger float-right" onClick={this.handleDelete}>Delete</button>
+                    <a href={this.props.link} target="blank" className="btn float-left text-primary">View More</a>
+                    <button className="btn btn-outline-danger float-right" onClick={() => this.props.deleteBook(this.state.bookData.id)}>Delete</button>
                 </div>
             </div>
         )
