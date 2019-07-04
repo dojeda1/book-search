@@ -38,20 +38,24 @@ class Search extends Component {
                     <h1>Search Google Books</h1>
                 </Jumbotron>
                 <div className="container">
-                    <form>
-                        <Input
-                            value={this.state.searchTitle}
-                            onChange={this.handleInputChange}
-                            name="searchTitle"
-                            placeholder="Search Books by Title"
-                        />
-                        <FormBtn
-                            disabled={!this.state.searchTitle}
-                            onClick={this.handleSearchSubmit}
-                        >
-                            Search
-                    </FormBtn>
-                    </form>
+                    <div className="row">
+                        <div className="col-12">
+                            <form>
+                                <Input
+                                    value={this.state.searchTitle}
+                                    onChange={this.handleInputChange}
+                                    name="searchTitle"
+                                    placeholder="Search Books by Title"
+                                />
+                                <FormBtn
+                                    disabled={!this.state.searchTitle}
+                                    onClick={this.handleSearchSubmit}
+                                >
+                                    Search
+                            </FormBtn>
+                            </form>
+                        </div>
+                    </div>
                     {this.state.bookData.map(book => (
                         <BookDiv
                             id={book.id}
