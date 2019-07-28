@@ -6,6 +6,8 @@ Search through a large database of books with the help of the Google Books API. 
 
   **Visit Web App [Here!](https://google-books-mern.herokuapp.com/)**
 
+![Web App Image](./demo.png)
+
 ### Technologies used
 
 * HTML
