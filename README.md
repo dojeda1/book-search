@@ -1,29 +1,17 @@
-# Create React Express App
+# Book Finder
 
-## About This Boilerplate
+## About the Project
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+Search through a large database of books with the help of the Google Books API. User inputs the title of a book and results are displayed below. They can then visit the google URL, save the book in a MongoDB database for later, or delete it from saved books.
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+Visit Web App [Here!](https://google-books-mern.herokuapp.com/)
 
-## Starting the app locally
+## Technologies used
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
-
-```
-npm install
-```
-
-This should install node modules within the server and the client folder.
-
-After both installations complete, run the following command in your terminal:
-
-```
-npm start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+* HTML
+* CSS
+* JavaScript
+* React.js
+* MongoDB
+* Mongoose
+* Google Books API
