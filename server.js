@@ -20,7 +20,6 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-console.log('process.env.MONGODB_URI: ', process.env.MONGODB_URI);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebookslist", { useNewUrlParser: true });
 
 // Start the API server
