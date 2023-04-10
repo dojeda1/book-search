@@ -31,6 +31,16 @@ class Search extends Component {
             });
     };
 
+    bookImage(book) {
+        if (book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail) {
+            return book.volumeInfo.imageLinks.thumbnail
+        } else if (book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail) {
+            return book.volumeInfo.imageLinks.smallThumbnail
+        } else {
+            return ''
+        }
+    }
+
     render() {
         return (
             <div>
@@ -63,7 +73,9 @@ class Search extends Component {
                             title={book.volumeInfo.title}
                             authors={book.volumeInfo.authors}
                             description={book.volumeInfo.description}
-                            image={book.volumeInfo.imageLinks.thumbnail}
+                            // image={"link"}
+                            // image={book.volumeInfo.imageLinks.thumbnail || ''}
+                            image={this.bookImage(book)}
                             link={book.volumeInfo.infoLink}
                         />
                     ))}
