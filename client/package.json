@@ -4,6 +4,9 @@
   "description": "Mern Demo",
   "private": true,
   "proxy": "http://localhost:3001/",
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
