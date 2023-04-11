@@ -44,7 +44,7 @@ class BookDiv extends Component {
                 </div>
                 <div className="col-12 pt-3">
                     <a href={this.props.link} target="blank" className="btn float-left text-primary">View More</a>
-                    <button className="btn btn-outline-success float-right" onClick={this.handleSave} disabled={this.state.saved} >Save</button>
+                    {/* <button className="btn btn-outline-success float-right" onClick={this.handleSave} disabled={this.state.saved} >Save</button> */}
                 </div>
             </div>
         )
